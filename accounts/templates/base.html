@@ -10,16 +10,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>petlover</title>
+    {% include "navbar.html" %}
+
   </head>
   <body>
 
-  {% include "navbar.html" %}
+<div class="container accordion-body p-md-5">
 
+  {% block body %}
+  <div class="row">
+    <div class="col-2">
+
+    </div>
+     <div class="col-10"> 
   {% block content %}
     
   {% endblock content %}
 
+    </div>
+  </div>
+  
+  {% endblock body %}
+
+
+</div>
+ 
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -107,7 +107,7 @@ class UserProfileView( TemplateView):
         context = super(UserProfileView, self).get_context_data(**kwargs)
         context["object"] = self.request.user
 
-        context["pets"] = self.request.user.pet_set.all()
+        # context["pets"] = self.request.user.pet_set.all()
         return context
 
 
@@ -115,10 +115,10 @@ class ProfileDetailView(DetailView):
     template_name = "account/profile.html"
     model = OwnerProfile
 
-    def get_context_data(self, **kwargs):
-        context = super(ProfileDetailView, self).get_context_data(**kwargs)
-        context["pets"] = self.object.pet_set.all()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(ProfileDetailView, self).get_context_data(**kwargs)
+    #     context["pets"] = self.object.pet_set.all()
+    #     return context
 
 
 def confirm_information(request):
