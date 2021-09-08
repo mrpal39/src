@@ -5,11 +5,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
 from django.urls.conf import include
+from accounts.views import home_page
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('allauth/',include('allauth.urls')),
-    path('',include('accounts.urls')),
+    path('accounts/',include('accounts.urls')),
+    path('',home_page,name='homepage'),
+    # path('t/',include('pet.urls')),
+
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

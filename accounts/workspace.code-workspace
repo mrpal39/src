@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "static",
+			"path": "../../../../static"
+		},
+		{
+			"name": "petlover",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

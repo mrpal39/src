@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n static compress  crispy_forms_tags%}
+
+
+{% block content %}
+<div class="container-fluid col-8">
+  
+<form action="" method="post" enctype="multipart/form-data">
+{% csrf_token%}
+<h4>{% trans 'Your Profile' %}</h4>
+{% crispy form %}
+</form>
+
+</div>
+
+{% endblock content %}

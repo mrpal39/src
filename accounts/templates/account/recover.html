@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n crispy_forms_tags %}
+
+
+{% block title %}{% trans 'Recover password' %}{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-7 col-md-offset-1">
+      {% if form %}
+        <p>
+          {% trans 'To recover your password enter your email address or username.' %}
+        </p>
+
+        {% crispy form %}
+      {% else %}
+        <p>
+          {% trans 'An email has just been sent to' %} <strong>{{ email }}</strong>.
+        </p>
+        <p>
+          {% trans 'Use the link in this email to set up a new password. The link is valid for two hours.' %}
+        </p>
+
+        <p>
+          <a class="btn btn-primary" href="{% url 'homepage' %}" title="{% trans 'Back to home page' %}">
+            {% trans 'Back to home page' %}
+          </a>
+        </p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
